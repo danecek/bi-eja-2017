@@ -44,15 +44,15 @@ public class DataView extends HttpServlet {
             if (username == null) {
                 out.println(
                         "<form action=\"login.do\" method=\"POST\">"
-                        + "<input type=\"text\" name=\"username\" value=\"\" />"
+                        + "<input type=\"text\" name=\"username\" />"
                         + "<input type=\"submit\" value=\"Login\" />"
                         + "</form>");
 
             } else {
                 out.println("username: " + username + "<br>");
                 out.println(
-                        "<form action=\"update.do\" method=\"POST\">"
-                        + "<input type=\"text\" name=\"element\" value=\"\" />"
+                        "<form action=\"add.do\" method=\"POST\">"
+                        + "<input type=\"text\" name=\"element\" />"
                         + "<input type=\"submit\" value=\"Add\" />"
                         + "</form>");
             }

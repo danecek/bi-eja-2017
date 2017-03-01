@@ -5,6 +5,7 @@
  */
 package biepjv.servletmvc.controller;
 
+import biepjv.servletmvc.model.Data;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -26,9 +27,10 @@ public class FrontController extends HttpServlet {
             case "/login.do":
                 HttpSession s = request.getSession();
                 s.setAttribute("username", request.getParameter("username"));
-            case "/update/do": {
-                
-                
+                break;
+            case "/add.do": {
+                Data.instance.add(request.getParameter("element"));
+                break;
             }    
         }
 //        RequestDispatcher rd = getServletContext().getRequestDispatcher("");
