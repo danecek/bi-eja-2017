@@ -34,6 +34,8 @@ public class MyRectangle {
     int maxY() {
         return refPoint.y;
     }
+    
+    static final MyRectangle zero = new MyRectangle(Integer.MAX_VALUE, Integer.MIN_VALUE, 1000, 1000); 
 
     public MyRectangle(int x, int y, int width, int height) {
         this(new MyPoint(x, y), width, height);

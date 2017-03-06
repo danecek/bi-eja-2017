@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) {
         MyRectangle r = new MyRectangle(0, 2, 1, 1);
-        MyRectangle r2 = new MyRectangle(1, 1, 1, 1);
-        System.out.println(r.union(r2)); // [[0,2], 2,2]
+      //  MyRectangle r2 = new MyRectangle(1, 1, 1, 1);
+        System.out.println(r.union(MyRectangle.zero)); // [[0,2], 2,2]
     }
 }
