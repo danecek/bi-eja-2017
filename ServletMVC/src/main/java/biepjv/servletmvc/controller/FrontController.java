@@ -7,7 +7,6 @@ package biepjv.servletmvc.controller;
 
 import biepjv.servletmvc.model.Data;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,9 +28,17 @@ public class FrontController extends HttpServlet {
                 s.setAttribute("username", request.getParameter("username"));
                 break;
             case "/add.do": {
-                Data.instance.add(request.getParameter("element"));
+                String elem = request.getParameter("element");
+                if (elem.length() < 3) {
+                    request.setAttribute("error", "Too short!");
+                    request.setAttribute("errorElem", elem);
+                    RequestDispatcher rd = getServletContext().getRequestDispatcher("");
+                    rd.forward(request, response);
+                } else {
+                    Data.instance.add(request.getParameter("element"));
+                }
                 break;
-            }    
+            }
         }
 //        RequestDispatcher rd = getServletContext().getRequestDispatcher("");
 //        rd.forward(request, response);

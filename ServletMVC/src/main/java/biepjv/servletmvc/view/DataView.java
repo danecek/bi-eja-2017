@@ -50,11 +50,18 @@ public class DataView extends HttpServlet {
 
             } else {
                 out.println("username: " + username + "<br>");
+                String error = (String) request.getAttribute("error");
+                String errorElem = "";
+                if (error != null) {
+                    out.println(error);
+                    errorElem = (String)request.getAttribute("errorElem");
+                }
                 out.println(
                         "<form action=\"add.do\" method=\"POST\">"
-                        + "<input type=\"text\" name=\"element\" />"
+                        + "<input type=\"text\" name=\"element\" value=\"" + errorElem + "\"  />"
                         + "<input type=\"submit\" value=\"Add\" />"
                         + "</form>");
+
             }
             out.println("</body>");
             out.println("</html>");
