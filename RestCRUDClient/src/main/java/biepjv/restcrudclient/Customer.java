@@ -10,6 +10,10 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlRootElement
 public class Customer {
 
+    public Customer(String name) {
+        this.name = name;
+    }
+
     public Customer() {
     }
     

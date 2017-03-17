@@ -12,11 +12,15 @@ public class Customer {
 
     public Customer() {
     }
-    
+
+    public Customer(String name) {
+        this.name = name;
+    }
+
     private String name;
     private int id;
 
-    public Customer(String name, int id) {
+    public Customer(int id, String name) {
         this.name = name;
         this.id = id;
     }
@@ -48,6 +52,5 @@ public class Customer {
     public void setId(int id) {
         this.id = id;
     }
-    
-    
+
 }
