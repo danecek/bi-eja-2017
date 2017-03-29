@@ -35,4 +35,12 @@ public class Facade {
         return new ArrayList(customers.values());
     }
 
+    public Customer findCustomer(int custId) {
+        return customers.get(custId);
+    }
+
+    public void deleteCustomer(Integer id) {
+        customers.remove(id);
+    }
+
 }

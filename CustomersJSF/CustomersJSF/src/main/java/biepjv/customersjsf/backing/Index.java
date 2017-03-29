@@ -9,25 +9,18 @@ import javax.enterprise.inject.Model;
 @Model
 public class Index {
     
-    private String name;
-    
     public List<Customer> getCustomers() {
         return Facade.inst.allCustomers();
     } 
-
-
-    public String getName() {
-        return name;
+    
+    public int getFirst() {
+        return 0;
     }
-
-
-    public void setName(String name) {
-        this.name = name;
+    
+    public int getRows() {
+        return 0;
+        
     }
+    
 
-    public String addCustomer() {
-        Facade.inst.addCustomer(new Customer(name));
-        name = null;
-        return "index";
-    }
 }
