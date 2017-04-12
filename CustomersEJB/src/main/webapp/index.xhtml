@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition template="template.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="content">
+
+      <!--c:forEach items="#{index.customers}" var="customer">
+          <li>#{customer.name} </li>
+      </c:forEach-->
+
+        <c:if test="#{empty index.customers}">
+            <h2>No customers</h2>
+        </c:if>
+
+        <h:dataTable var="customer" value="#{index.customers}" border="1" 
+                     rendered="#{not empty index.customers}"
+                     first="#{index.first}" rows="#{index.rows}">
+            <f:facet name="caption">Customers</f:facet>
+            <h:column>
+                <f:facet name="header">Id</f:facet>
+                    #{customer.id}
+            </h:column>
+            <h:column>
+                <f:facet name="header">Name</f:facet>
+                    #{customer.name}
+            </h:column>
+            <h:column>
+                <h:link outcome="deleteCustomer" value="Delete">
+                    <f:param name="custId" value="#{customer.id}"/>
+                </h:link>
+            </h:column>
+        </h:dataTable>
+        <div class="w3-container>">
+            <h:form>
+                <h:panelGrid columns="4">
+                    <h:commandButton value="first" action="#{index.first()}"/>
+                    <h:commandButton value="prev" action="#{index.prev()}"/>
+                    <h:commandButton value="next" action="#{index.next()}"/>
+                    <h:commandButton value="last" action="#{index.last()}"/>
+                </h:panelGrid>
+            </h:form>
+        </div>
+
+    </ui:define>
+</ui:composition>
+
+

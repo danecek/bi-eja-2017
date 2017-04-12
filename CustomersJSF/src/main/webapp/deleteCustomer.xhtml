@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition>
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./template.xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <ui:define name="content">
+        <f:metadata>
+            <f:viewParam name="custId" value="#{deleteCustomer.custId}"/>
+        </f:metadata>
+        <h2>Delete customer:</h2>
+        <h:panelGrid columns="2">
+            <h:outputLabel for="id" value="Id:"/>
+            <h:outputText id="id" value="#{deleteCustomer.custId}"/>
+            <h:outputLabel for="name" value="Name:"/>
+            <h:outputText id="name" value="#{deleteCustomer.name}"/>
+        </h:panelGrid>
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:commandButton value="Delete" action="#{deleteCustomer.delete}">
+                    <f:param name="custId" value="#{deleteCustomer.custId}"/>
+                </h:commandButton>
+                <h:button value="Cancel" outcome="index"/>
+            </h:panelGrid>
+        </h:form>
+    </ui:define>
+
+
+</ui:composition>

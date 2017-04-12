@@ -15,3 +15,11 @@ hs_err_pid*
 /RestHW/target/
 /RestCRUD/target/
 /RestCRUDClient/target/
+/MVCJSP/target/
+/CustomersJSF/CustomersJSF/target/
+/ArraySet/target/
+/CustomersJSFx/CustomersJSF/target/
+/CustomersJSF/target/
+/CustomersCDI/target/
+/CustomersMustache/target/
+/CustomersEJB/target/
