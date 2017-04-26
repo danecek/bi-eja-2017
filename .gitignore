@@ -23,3 +23,8 @@ hs_err_pid*
 /CustomersCDI/target/
 /CustomersMustache/target/
 /CustomersEJB/target/
+/CustomersJPA/target/
+/JFXHelloWorld/target/
+/JFXHW/target/
+/JFXSemaphor/target/
+/Semaphor2/target/

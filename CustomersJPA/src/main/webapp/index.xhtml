@@ -28,7 +28,16 @@
                     #{customer.name}
             </h:column>
             <h:column>
+                <f:facet name="header">Version</f:facet>
+                    #{customer.version}
+            </h:column>
+            <h:column>
                 <h:link outcome="deleteCustomer" value="Delete">
+                    <f:param name="custId" value="#{customer.id}"/>
+                </h:link>
+            </h:column>
+            <h:column>
+                <h:link outcome="updateCustomer" value="Update">
                     <f:param name="custId" value="#{customer.id}"/>
                 </h:link>
             </h:column>

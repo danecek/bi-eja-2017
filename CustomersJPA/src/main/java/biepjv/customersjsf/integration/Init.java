@@ -21,6 +21,7 @@ public class Init {
     public void init() {
         customerDAO.create(new Customer("Tom"));
         customerDAO.create(new Customer("Bob"));
+        
 
     }
 

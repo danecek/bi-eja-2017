@@ -6,6 +6,8 @@
 package biepjv.customersjsf.integration;
 
 import biepjv.customersjsf.model.Customer;
+import biepjv.customersjsf.model.Order;
+import static biepjv.customersjsf.model.Order_.customer;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -13,25 +15,27 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
 @Stateless
-public class CustomerDAO {
+public class OrderDAO {
 
     @PersistenceContext
     EntityManager em;
 
-    public void create(Customer customer) {
-        em.persist(customer);
+    public void create(Integer custId, Order order) {
+        Customer c = em.find(Customer.class, custId);
+        order.setCustomer(c);
+        em.persist(order);
     }
 
-    public Customer find(int id) {
-        return em.find(Customer.class, id);
+    public Order find(int id) {
+        return em.find(Order.class, id);
     }
 
-    public List<Customer> all() {
-        TypedQuery<Customer> q = em.createNamedQuery("allCustomers", Customer.class);
+    public List<Order> all() {
+        TypedQuery<Order> q = em.createNamedQuery("allOrders", Order.class);
         return q.getResultList();
     }
 
-    public void update(Customer c) {
+    public void update(Order c) {
         em.merge(c);
     }
 
