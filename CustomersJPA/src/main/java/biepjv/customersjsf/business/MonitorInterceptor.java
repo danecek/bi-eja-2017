@@ -16,7 +16,7 @@ public class MonitorInterceptor {
     
     @AroundInvoke
     public Object monitor(InvocationContext ic) throws Exception {
-        LOG.info(ic.getMethod() + ":" + Arrays.toString(ic.getParameters()));
+    //    LOG.info(ic.getMethod() + ":" + Arrays.toString(ic.getParameters()));
         return ic.proceed();
     }
     private static final Logger LOG = Logger.getLogger(MonitorInterceptor.class.getName());
