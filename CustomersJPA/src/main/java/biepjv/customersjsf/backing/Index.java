@@ -55,7 +55,7 @@ public class Index implements Serializable {
     }
 
     public void last() {
-       firstRow = getCustomers().size()- MAX_ROWS;
+       firstRow = Math.max(0, getCustomers().size()- MAX_ROWS);
     }
 
 }
